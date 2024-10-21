@@ -31,6 +31,7 @@ class TrafficController:
             total_green_signal_time += traffic_light.green_light.duration()
         for road in self.roads.values():
             self._set_duration_of_red_signal(road, total_green_signal_time)
+            traffic_light = road.get_traffic_light()
             threading.Thread(target=self._start_signal, args=traffic_light, daemon=True).start()
                 
     def _set_duration_of_green_signal(self, road: Road):

@@ -9,10 +9,10 @@ class Road:
         return self.name
     
     def get_traffic_light(self) -> TrafficLight:
-        return self.curr_traffic_light
+        return self.traffic_light
     
     def set_traffic_light(self, traffic_light: TrafficLight):
-        self.curr_traffic_light = traffic_light
+        self.traffic_light = traffic_light
         
     
             
