@@ -43,7 +43,6 @@ class TrafficController:
         red_light_duration = total_duration_of_green_light - road.get_traffic_light().green_signal.duration
         road.get_traffic_light().set_signal_duration(SignalsEnum.RED, red_light_duration)
     
-        
     def _start_signal(self, traffic_light: TrafficLight):
         while True:
             green_duration = traffic_light.green_light.duration()
