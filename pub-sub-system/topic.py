@@ -1,19 +1,21 @@
+from .message import Message
+from .subscriber import Subscriber
 class Topic:
     def __init__(self, name):
         self.name = name
-        self.messages = []
         self.subscribers = []
     
     def get_name(self):
         return self.name
     
-    def publish(self, message):
+    def publish(self, message: Message):
         for subscriber in self.subscribers:
             subscriber.receive(message, self)
-            
-        # self.messages.append(message)
-    
-    def subscribe(self, subscriber):
+                
+    def subscribe(self, subscriber: Subscriber):
         self.subscribers.append(subscriber)
+    
+    def unsubscribe(self, subscriber: Subscriber):
+        self.subscribers.remove(subscriber)
                     
     
