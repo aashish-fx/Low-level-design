@@ -6,9 +6,11 @@ class Cell:
         
     def set_piece(self, symbol) -> str:
         if self.symbol != "":
-            raise ValueError("Cell already Full")
+            raise ValueError("Cell is not empty")
         self.symbol = symbol
         
     def get_piece(self) -> str:
         return self.symbol
         
+    def get_coordinates(self):
+        return (self.x, self.y)
