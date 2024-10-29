@@ -22,7 +22,7 @@ class Customer:
         if reservation_id in self.reservations:
             reservation = self.reservations[reservation_id] 
             reservation.mark_as_invalid()
-            del self.reservations[reservation_id]
+            self.reservations.pop(reservation_id)
         else:
             raise ValueError("reservation does not exist")
         
