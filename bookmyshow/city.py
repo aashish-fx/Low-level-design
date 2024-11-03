@@ -1,3 +1,5 @@
+import typing as tp
+
 from cinema import Cinema
 
 
@@ -10,8 +12,11 @@ class City:
         
     def add_cinema(self, cinema: Cinema):
         self.cinemas[cinema.cinemaId] = cinema
+    
+    def get_id(self) -> str:
+        return self.id
         
-    def get_cinemas(self):
+    def get_cinemas(self) -> tp.Dict[str, Cinema]:
         return self.cinemas
     
     def get_cinema(self, cinema_id: str):

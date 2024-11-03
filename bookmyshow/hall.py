@@ -9,7 +9,10 @@ class Hall:
         self.premium_seats = {}
         self.regular_seats = {}
         self.current_running_movie = current_running_movie
-        
+    
+    def get_id(self):
+        return self.hallId
+    
     def get_no_of_premium_seats(self):
         return self.get_no_of_premium_seats
     
@@ -29,4 +32,10 @@ class Hall:
             self.regular_seats[seat.id] = seat
         else:
             raise ValueError("Seat type not available")
+    
+    def get_seats(self):
+        premium = self.get_no_of_premium_seats()
+        regular = self.get_no_of_regular_seats()
+        premium.updade(regular)
+        return premium
     
