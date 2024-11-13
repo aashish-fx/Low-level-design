@@ -9,9 +9,9 @@ from seat import Seat
 class BookMyShowSystem:
     _instance = None
     
-    def __call__(cls):
+    def __new__(cls):
         if not cls._instance:
-            cls._instance = super().__call__(BookMyShowSystem, cls)
+            cls._instance = super(BookMyShowSystem).__new__(cls)
             cls._cities = {}
             cls._halls = {}
         return cls._instance
